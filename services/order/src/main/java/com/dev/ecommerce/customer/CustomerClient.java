@@ -1,5 +1,6 @@
 package com.dev.ecommerce.customer;
 
+import com.dev.ecommerce.config.BearerAuthFeignConfig;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

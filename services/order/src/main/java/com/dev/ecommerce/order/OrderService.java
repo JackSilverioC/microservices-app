@@ -8,6 +8,7 @@ import com.dev.ecommerce.orderline.OrderLineRequest;
 import com.dev.ecommerce.orderline.OrderLineService;
 import com.dev.ecommerce.payment.PaymentClient;
 import com.dev.ecommerce.payment.PaymentRequest;
+import com.dev.ecommerce.product.IProductClient;
 import com.dev.ecommerce.product.ProductClient;
 import com.dev.ecommerce.product.PurchaseRequest;
 import jakarta.persistence.EntityNotFoundException;
@@ -24,7 +25,8 @@ public class OrderService {
     private final OrderRepository repository;
 
     private final CustomerClient customerClient; // Using FeignClient
-    private final ProductClient productClient; // Using RestTemplate
+    //private final ProductClient productClient; // Using RestTemplate
+    private final IProductClient productClient;
 
     private final OrderMapper mapper;
     private final OrderLineService orderLineService;

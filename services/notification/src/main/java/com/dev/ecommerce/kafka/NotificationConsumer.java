@@ -22,7 +22,7 @@ public class NotificationConsumer {
     private final NotificationRepository repository;
     private final EmailService emailService;
 
-    // PaymentConfirmation->must be the same
+    // PaymentConfirmation
     @KafkaListener(topics = "payment-topic", groupId = "paymentGroup")
     public void consumePaymentSuccessNotification(PaymentConfirmation paymentConfirmation) throws MessagingException {
         log.info(String.format("Consuming the message from payment-topic: %s", paymentConfirmation));
@@ -43,7 +43,7 @@ public class NotificationConsumer {
                 paymentConfirmation.orderReference()
         );
     }
-    // OrderConfirmation->must be the same or not?
+    // OrderConfirmation
     @KafkaListener(topics = "order-topic", groupId = "orderGroup")
     public void consumeOrderConfirmationNotification(OrderConfirmation orderConfirmation) throws MessagingException {
         log.info(String.format("Consuming the message from order-topic: %s", orderConfirmation));
